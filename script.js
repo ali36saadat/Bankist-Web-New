@@ -52,7 +52,10 @@ btnScrollTo.addEventListener('click', function () {
 navLinks.addEventListener('click', function (e) {
   e.preventDefault();
 
-  if (e.target.classList.contains('nav__link')) {
+  if (
+    e.target.classList.contains('nav__link') &&
+    !e.target.classList.contains('btn--show-modal')
+  ) {
     const linkHref = e.target.getAttribute('href');
     document.querySelector(linkHref).scrollIntoView({ behavior: 'smooth' });
   }
